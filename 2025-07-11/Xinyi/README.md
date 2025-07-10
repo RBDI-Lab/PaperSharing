@@ -2,23 +2,30 @@
 
 ### Why did you choose to share this paper?
   
-I shared this paper because it presents the first comprehensive evaluation and comparison of LLM-based and GNN-based methods for node classification. It covers 10 homophilic datasets, 4 heterophilic datasets, 8 LLM-based algorithms, 8 classical baselines, and 3 learning paradigms (semi-supervised, supervised, and zero-shot learning). Through extensive experiments, the authors provide several important insights into the use of LLMs for graph learning, offering valuable guidance for future research.
+I shared this paper because it presents the first multi-agent framework specifically designed for graph data synthesis. Traditional graph data synthesis techniques primarily focus on simplistic structural operations, lacking the capacity to generate semantically rich nodes with meaningful textual attributes. 
+
+GraphMaster orchestrates four specialized LLM agents (Manager, Perception, Enhancement, and Evaluation) that collaboratively optimize the synthesis process through iterative refinement, ensuring both semantic coherence and structural integrity.
+
+It creates new data-limited “Sub” variants of six standard graph benchmarks, specifically designed to test synthesis capabilities under realistic constraints. 
+
 
 ### What is the motivation behind this paper?
 
-LLMs have recently been introduced into graph learning to enhance node classification performance. However, their integration follows diverse paradigms. In supervised settings, LLMs can serve as encoders, explainers, or predictors. For zero-shot learning, they are used for direct inference or as components of graph foundation models. Despite their growing use, the performance of LLM-based methods relative to traditional GNNs remains unclear. This paper aims to clarify the effectiveness of each paradigm across various experimental settings.
+Existing methods suffer from the inability to simultaneously preserve meaningful semantics while generating structurally valid expansions, especially handling text-attributed graphs (TAGs) where both connectivity patterns and textual node features must remain coherent.  Although, a single LLM might possess the theoretical capability to understand graph structures, there are 3 challenges for complex data generation task:
+1. standard context windows cannot process entire graphs with numerous textual nodes.
+2. struggle to maintain structural consistency.
+3. they tend to produce inconsistent or hallucinated content.
 
-### How do you envision applying the methods from this paper to your own research?
-  
-This paper offers several key insights into the use of LLMs for graph data:
-
-- **LLM-based approaches** provide only marginal improvements over traditional methods when ample supervision is available.  
-- LLM-based approaches show greater advantages in semi-supervised settings.  
-- The **LLM-as-Predictor** paradigm requires a large number of labeled examples to perform well.  
-- **Graph Foundation Models (GFMs)** slightly outperform open-source LLMs but still fall short of SOTA LLM like **GPT-4o**, which achieves the best performance. This highlights the need for further research on GFMs.  
-- The performance of **direct LLM inference** can be significantly improved by incorporating **structural information** from the graph.  
-- The **LLM-as-Encoder** paradigm performs especially well on graphs with **low heterophily**, clearly outperforming traditional language models.
+The propsoed collaborative framework enable each agent to focus on a specific challenge and achieve the better data generation.
 
 ### How can the ideas in this paper be generalized to other areas or problems?
+  
+This paper offers a novel multi-agent paradigm for graph data generation:
 
-The paradigms of LLM usage in the graph domain are also commonly observed in recommendation systems and multi-modal learning. The insights related to label quantity and data heterophily can inform the design of more effective LLM based methods across these fields.
+Manager: coordinates the overall process and determines optimal synthesis strategies based on current graph characteristics.  
+Perception: analyzes graph structure and employs advanced sampling to identify representative subgraphs processable within LLM context constraints.  
+Enhancement: generates new nodes and edges with consistent semantics and structure.  
+Evaluation: assesses quality based on both semantic coherence and structural integrity, providing feedback for iterative improvement to ensure structural and semantic consistency.   
+
+The proposed method supports comprehensive evaluation in graph representation learning, including metrics such as class imbalance, community detection, information diffusion, and node degree distribution analysis.
+Furthermore, the LLM-based paradigm in the graph domain can be extended to data-centric approaches for comprehensive data generation and quality evaluation.
