@@ -1,3 +1,5 @@
+# Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models
+
 ### 1. Why did you choose to share this paper?
 
 I chose this paper because it is the first comprehensive survey on efficient reasoning in large language models (LLMs). With the rapid rise of reasoning-focused models like OpenAI o1 and DeepSeek-R1, efficiency has become a pressing bottleneck. This survey provides a clear taxonomy of methods, challenges, and benchmarks, making it an excellent resource for understanding the emerging field and inspiring research directions.
