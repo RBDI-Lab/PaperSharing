@@ -18,3 +18,11 @@ The paper highlights several central challenges:
 + Conflicting training objectives – Pretraining and reinforcement learning often encourage longer reasoning, so enforcing conciseness works against existing optimization signals.
 + Lack of benchmarks and evaluation methods – There are limited tools for systematically measuring overthinking and reasoning efficiency.
 + Generality across models and tasks – Techniques that work for math or programming may not directly transfer to open-domain or multimodal reasoning.
+
+### Ideas to Explore
++ Latent reasoning-based recommender systems
++ Rethink and Re-evaluate poisoning attacks against recommender systems with agent-based simulation
++ Routing-based efficient reasoning for recommendation
++ Security of LLM Agent-based recommender systems
++ Multi-agent architecture search
++ Efficient Multi-agent communication
